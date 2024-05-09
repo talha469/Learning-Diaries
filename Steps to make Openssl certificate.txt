@@ -1,0 +1,12 @@
+Steps to make Openssl certificate
+1- open openssl terminal or cmd command
+2- openssl req -x509 -days 365 -newkey rsa:2048 -keyout enablebanking-test-key.pem -out enablebanking-cert.pem
+3- Enter details
+
+combine to make pfx
+openssl pkcs12 -export -in enablebankingtest-cert.pem -inkey enablebankingtest-key.pem -out enablebankingtest-cert.pfx
+
+now we will make a public key
+openssl pkcs12 -in enablebankingtest-cert.pfx -clcerts -nokeys -out enablebankingtest-cert-public.pem
+
+key : enablebank
